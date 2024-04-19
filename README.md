@@ -62,10 +62,10 @@ As the project progresses, more tables and visualizations will be provided below
 ![](images/sentiment.png)
 ![](images/labels.png)
 
-### Control Visualizations
+### Suicidal Messages
 ![](images/suicide_emojis.png)
 ![](images/suicide_wordcloud.png)
-### Suicide Visualizations
+### Non-Suicidal Messages
 ![](images/control_emojis.png)
 ![](images/control_wordcloud.png)
 
