@@ -29,7 +29,18 @@ The new pipeline can be visualized below:
 ![](images/pipeline.png)
 
 
-##
+## Results 
+A comparison of the updated models can be seen below. The results are only with relation to the testing set.
+As the project progresses, more tables and visualizations will be provided below.
+
+| Base Model  | Original Accuracy (%) | New Accuracy (%) |
+| ------------- | ------------- | -------------|
+| Random Forest | 87%  | 89.1% (+2%)|
+| Logistic Regression | 95%  | TBD | 
+| Gradient Boosting Classifier | NEW!  | 89.3% (+2.3%)| 
+| VotingClassifier | NEW! | TBD | 
+
+
 
 ## References
 - [The Suicide and Depression Detection Dataset](https://www.kaggle.com/datasets/nikhileswarkomati/suicide-watch/data)
