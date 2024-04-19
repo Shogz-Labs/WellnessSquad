@@ -23,23 +23,51 @@ I have added some improvements by:
     - Optuna
     - VotingClassifier 
 
+## Data Analytics
+I have provided some preliminary data analytics and visualizations from our training dataset. You may also see them in our dataloader.ipynb file. If you have any questions, please feel free to reach out at any time! :smile: 
 ## Pipeline 
 
 The new pipeline can be visualized below:
 ![](images/pipeline.png)
 
+## Hyperparameters
+Optimal Random Forest Hyperparameters
+```
+```
+
+Optimal Logistic Regression Hyperparameters
+```
+```
+
+Optimal Gradient Boosting Hyperparameters
+```
+```
+
+Optimal Voting Classifier Hyperparameters
+```
+```
 
 ## Results 
 A comparison of the updated models can be seen below. The results are only with relation to the testing set.
 As the project progresses, more tables and visualizations will be provided below.
 
-| Model  | Original Accuracy (%) | (Base) Accuracy (%) | (Optimal) Accuracy (%)|
+| Model  | Original Model Accuracy (%) | New (Base) Accuracy (%) | New (Optimal) Accuracy (%)|
 | ------------- | ------------- | -------------| ------------- |
-| Random Forest  | 87.0%  | 89.1% (+2%)| ? |
+| Random Forest  | 87.0%  | 89.1% (+1%) | ? |
 | Logistic Regression | 95%  | 94.0% (-1%) | ? | 
-| Gradient Boosting Classifier | NEW!  | 89.3%| ? | 
-| VotingClassifier | NEW! | TBD | ? |
+| Gradient Boosting Classifier | N/A | 89.3%| ? | 
+| VotingClassifier | N/A | TBD | ? |
 
+## Data Visualizations
+![](images/sentiment.png)
+![](images/labels.png)
+
+### Control Visualizations
+![](images/suicide_emojis.png)
+![](images/suicide_wordcloud.png)
+### Suicide Visualizations
+![](images/control_emojis.png)
+![](images/control_wordcloud.png)
 
 ## References
 - [The Suicide and Depression Detection Dataset](https://www.kaggle.com/datasets/nikhileswarkomati/suicide-watch/data)
