@@ -33,13 +33,12 @@ The new pipeline can be visualized below:
 A comparison of the updated models can be seen below. The results are only with relation to the testing set.
 As the project progresses, more tables and visualizations will be provided below.
 
-| Base Model  | Original Accuracy (%) | New Accuracy (%) |
-| ------------- | ------------- | -------------|
-| Random Forest | 87%  | 89.1% (+2%)|
-| Logistic Regression | 95%  | TBD | 
-| Gradient Boosting Classifier | NEW!  | 89.3%| 
-| VotingClassifier | NEW! | TBD | 
-
+| Model  | Original Accuracy (%) | (Base) Accuracy (%) | (Optimal) Accuracy (%)|
+| ------------- | ------------- | -------------| ------------- |
+| Random Forest  | 87.0%  | 89.1% (+2%)| ? |
+| Logistic Regression | 95%  | 94.0% (-1%) | ? | 
+| Gradient Boosting Classifier | NEW!  | 89.3%| ? | 
+| VotingClassifier | NEW! | TBD | ? |
 
 
 ## References
