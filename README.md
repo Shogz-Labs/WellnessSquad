@@ -37,7 +37,7 @@ As the project progresses, more tables and visualizations will be provided below
 | ------------- | ------------- | -------------|
 | Random Forest | 87%  | 89.1% (+2%)|
 | Logistic Regression | 95%  | TBD | 
-| Gradient Boosting Classifier | NEW!  | 89.3% (+2.3%)| 
+| Gradient Boosting Classifier | NEW!  | 89.3%| 
 | VotingClassifier | NEW! | TBD | 
 
 
