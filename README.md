@@ -24,7 +24,7 @@ I have added some improvements by:
     - VotingClassifier 
 
 ## Data Analytics
-I have provided some preliminary data analytics and visualizations from our training dataset. You may also see them in our dataloader.ipynb file. If you have any questions, please feel free to reach out at any time! :smile: 
+I have provided some preliminary data analytics and visualizations from our training dataset. You may also see them in our [Data_Visualizations.py](https://github.com/stoyonaga/WellnessSquad/blob/main/Notebooks/Dataset_Visualizations). If you have any questions, please feel free to reach out at any time! :smile: 
 ## Pipeline 
 
 The new pipeline can be visualized below:
@@ -53,8 +53,8 @@ As the project progresses, more tables and visualizations will be provided below
 
 | Model  | Original Model Accuracy (%) | New (Base) Accuracy (%) | New (Optimal) Accuracy (%)|
 | ------------- | ------------- | -------------| ------------- |
-| Random Forest  | 87.0%  | 89.1% (+1%) | ? |
-| Logistic Regression | 95%  | 94.0% (-1%) | ? | 
+| Random Forest  | 87.0%  | 89.1% (+2%) | ? |
+| Logistic Regression | 95.0%  | 94.0% (-1%) | ? | 
 | Gradient Boosting Classifier | N/A | 89.3%| ? | 
 | VotingClassifier | N/A | TBD | ? |
 
