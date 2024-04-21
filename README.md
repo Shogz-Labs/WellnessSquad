@@ -27,6 +27,7 @@ I have added some improvements by:
 
 ## Data Analytics
 I have provided some preliminary data analytics and visualizations from our training dataset. You may also see them in our [Data_Visualizations.ipynb](https://github.com/stoyonaga/WellnessSquad/blob/main/Notebooks/Dataset_Visualizations.ipynb). If you have any questions, please feel free to reach out at any time! :smile: 
+
 ## Pipeline 
 
 The new pipeline can be visualized below:
@@ -41,10 +42,10 @@ As the project progresses, more tables and visualizations will be provided below
 
 | Model  | Model Accuracy | 
 | ------------- | ------------- | 
-| [Random Forest]()  | 89.1% |
-| [Logistic Regression]() | 94.0% | 
-| [Gradient Boosting Classifier]() | 89.3% | 
-| [VotingClassifier]() | 93.0 %|
+| [Random Forest](https://github.com/stoyonaga/WellnessSquad/blob/main/Notebooks/Models/RandomForest.ipynb)  | 89.1% |
+| [Logistic Regression](https://github.com/stoyonaga/WellnessSquad/blob/main/Notebooks/Models/LogisticRegression.ipynb) | 94.0% | 
+| [Gradient Boosting Classifier](https://github.com/stoyonaga/WellnessSquad/blob/main/Notebooks/Models/GradientBoosting.ipynb) | 89.3% | 
+| [VotingClassifier](https://github.com/stoyonaga/WellnessSquad/blob/main/Notebooks/Models/VotingClassifier.ipynb) | 93.0 %|
 
 I would have loved to provide the optimal hyperparameters from running a comprehensive optuna study, however, I do not currently have the available compute.
 Nevertheless, I have provided the programming scripts to obtain them if you have a sufficiently strong CPU and an abundance of computing time :P 
