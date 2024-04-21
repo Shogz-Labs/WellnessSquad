@@ -19,44 +19,35 @@ I have added some improvements by:
 3. Data Analytics & Visualization
     - Plotly Express 
     - Emojis
-4. Models 
-    - Optuna
-    - VotingClassifier 
+
+4. Models & Tuning
+    - VotingClassifier
+    - Gradient Boosting Classifier
+    - Optuna 
 
 ## Data Analytics
-I have provided some preliminary data analytics and visualizations from our training dataset. You may also see them in our [Data_Visualizations.py](https://github.com/stoyonaga/WellnessSquad/blob/main/Notebooks/Dataset_Visualizations). If you have any questions, please feel free to reach out at any time! :smile: 
+I have provided some preliminary data analytics and visualizations from our training dataset. You may also see them in our [Data_Visualizations.ipynb](https://github.com/stoyonaga/WellnessSquad/blob/main/Notebooks/Dataset_Visualizations.ipynb). If you have any questions, please feel free to reach out at any time! :smile: 
 ## Pipeline 
 
 The new pipeline can be visualized below:
 ![](images/pipeline.png)
 
 ## Hyperparameters
-Optimal Random Forest Hyperparameters
-```
-```
-
-Optimal Logistic Regression Hyperparameters
-```
-```
-
-Optimal Gradient Boosting Hyperparameters
-```
-```
-
-Optimal Voting Classifier Hyperparameters
-```
-```
+To obtain the optimal hyperparameters, I have added some new code that leverages optuna. Additionally, it offers visualizations to see which features are the most important to improving your models performance.
 
 ## Results 
 A comparison of the updated models can be seen below. The results are only with relation to the testing set.
 As the project progresses, more tables and visualizations will be provided below.
 
-| Model  | Original Model Accuracy (%) | New (Base) Accuracy (%) | New (Optimal) Accuracy (%)|
-| ------------- | ------------- | -------------| ------------- |
-| Random Forest  | 87.0%  | 89.1% (+2%) | ? |
-| Logistic Regression | 95.0%  | 94.0% (-1%) | ? | 
-| Gradient Boosting Classifier | N/A | 89.3%| ? | 
-| VotingClassifier | N/A | TBD | ? |
+| Model  | Model Accuracy | 
+| ------------- | ------------- | 
+| [Random Forest]()  | 89.1% |
+| [Logistic Regression]() | 94.0% | 
+| [Gradient Boosting Classifier]() | 89.3% | 
+| [VotingClassifier]() | 93.0 %|
+
+I would have loved to provide the optimal hyperparameters from running a comprehensive optuna study, however, I do not currently have the available compute.
+Nevertheless, I have provided the programming scripts to obtain them if you have a sufficiently strong CPU and an abundance of computing time :P 
 
 ## Data Visualizations
 ![](images/sentiment.png)
