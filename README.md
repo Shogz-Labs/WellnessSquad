@@ -14,7 +14,7 @@ I have added some improvements by:
     - Imputers 
     - StandardScaler 
     - OneHotEncoder 
-    - TfidVectorizer
+    - TfidfVectorizer
 
 3. Data Analytics & Visualization
     - Plotly Express 
