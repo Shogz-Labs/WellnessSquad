@@ -19,6 +19,8 @@ I have added some improvements by:
 3. Data Analytics & Visualization
     - Plotly Express 
     - Emojis
+    - Streamlit 
+    - Model Sandbox (Jupyter Notebook)
 
 4. Models & Tuning
     - VotingClassifier
