@@ -1,11 +1,9 @@
-import joblib
 import torch
 import re
 import string
 import emoji
 import requests
 from collections import Counter
-import statistics
 from playwright.async_api import async_playwright, Playwright
 import asyncio
 import time
@@ -13,10 +11,12 @@ from bs4 import BeautifulSoup
 import nest_asyncio
 from transformers import pipeline
 from transformers import AutoTokenizer, AutoModelForCausalLM
+asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
 nest_asyncio.apply()
 from tqdm.auto import tqdm
 import pandas as pd
 import plotly.express as px
+import sklearn
 tqdm.pandas()
 from youtube_transcript_api import YouTubeTranscriptApi
 dv = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -92,12 +92,15 @@ def predict_ideation(model, messages, generate_visuals):
 
   container = pd.DataFrame(container)
 
-  predictions = model.predict(container),
-  class_probabilities = model.predict_proba(container)
+  predictions = model.predict(container)
+  
 
+  
   for i in range(len(messages)):
-    output += f"\nMessage {messages[i]} has been labeled as: {[predictions[0][i]]}\n"
-    output += f"\t Non-Suicide Approximation (%): {class_probabilities[i][0]}\n \t Suicide Approximation (%): {class_probabilities[i][1]}\n"
+    output += f"Message {messages[i]} has been labeled as: {[predictions[0]]}\n"
+    if type(model) != sklearn.ensemble._voting.VotingClassifier:
+      class_probabilities = model.predict_proba(container)
+      output += f"\t Non-Suicide Approximation (%): {class_probabilities[i][0]}\n \t Suicide Approximation (%): {class_probabilities[i][1]}\n"
 
   labels = Counter(predictions[0])
   fig = px.pie(
@@ -124,16 +127,19 @@ def scrape_quora(model, link, number_of_long_posts, min_post_length_in_chars, lo
       chromium = playwright.chromium # or "firefox" or "webkit".
       browser = await chromium.launch()
       page = await browser.new_page()
+      logs = ''
+    
+
 
       await page.goto(link)
-      print("Sleeping for {} seconds (page loading)".format(loading_time))
+      logs += "Sleeping for {} seconds (page loading)\n".format(loading_time)
       time.sleep(loading_time)
       for i in range(number_of_long_posts):
         try:
           button = await page.get_by_text("Continue Reading", exact=True).nth(i).click()
-          print("Post #{} has been expanded...".format(i + 1))
+          logs += "Post #{} has been expanded...\n".format(i + 1)
         except:
-          print("Not enough post data!! We scraped what was available to us.")
+          logs += "Not enough post data!! We scraped what was available to us.\n"
           break
         await page.mouse.wheel(0,125)
       html = page.inner_html("#mainContent")
@@ -143,17 +149,23 @@ def scrape_quora(model, link, number_of_long_posts, min_post_length_in_chars, lo
       for post in posts:
         if len(post.text.strip()) > min_post_length_in_chars:
           answers.append(post.text.strip())
-      print("After pruning, {} posts (text-only) remain.".format(len(answers)))
-      print(predict_ideation(model, answers, False))
+      logs += "After pruning, {} posts (text-only) remain.\n".format(len(answers))
+      logs += predict_ideation(model, answers, False)
       await browser.close()
+      return logs
 
   async def main():
       async with async_playwright() as playwright:
-          await run(playwright)
-  asyncio.run(main())
+        # Added to fix synchronization issues with Streamlit 
+        return await run(playwright)
+  # Return output of async run(playwright: Playwright) and we intend to write the string representation to the Streamlit UI
+  # [Bug Fixed!!]
+  logs = asyncio.run(main())
+  return logs
 
 
 def scrape_reddit(model, subreddit_id, filter_classifier):
+  output = ''
   url = "https://www.reddit.com/r/{}/{}".format(subreddit_id, filter_classifier)
   print("Requesting information (json file) from {}...".format(url))
   headers = {
@@ -170,11 +182,12 @@ def scrape_reddit(model, subreddit_id, filter_classifier):
       reddit_text.append(post['data']['selftext'])
     print("Number of scraped posted: {}".format(len(reddit_title)))
     for i in range(len(reddit_text)):
-      print("---------- Analysis of Comment {} ----------".format(i + 1))
+      output += "---------- Analysis of Comment {} ----------\n".format(i + 1)
       # print(predict_ideation(model, reddit_title, False))
-      print(predict_ideation(model, [reddit_text[i]], False))
+      output += predict_ideation(model, [reddit_text[i]], False)
   else:
-    print('Error {}'.format(response.status_code))
+    output = 'Error {}'.format(response.status_code)
+  return output
 
 def scrape_youtube_transcript(model, url: str):
   text = ''
@@ -182,6 +195,3 @@ def scrape_youtube_transcript(model, url: str):
     text += entry['text'].strip() + ' '
   text = re.sub(r'[^a-zA-Z ]+', '', ''.join(text.splitlines()))
   return predict_ideation(model, [text], False)
-
-
-

@@ -6,7 +6,7 @@ I have added some improvements by:
 
 1. Training our base models on new handcrafted features.
     - clean_text
-    - average_words_per_setence
+    - average_words_per_sentence
     - Sentiment (roberta-base-sentiment)
     - num_emojis
 
@@ -26,6 +26,11 @@ I have added some improvements by:
     - VotingClassifier
     - Gradient Boosting Classifier
     - Optuna 
+
+To initialize the user interface, please run the following command inside the working directory:
+```bash
+streamlit run .\user_interface.py
+```
 
 ## Data Analytics
 I have provided some preliminary data analytics and visualizations from our training dataset. You may also see them in our [Data_Visualizations.ipynb](https://github.com/stoyonaga/WellnessSquad/blob/main/Notebooks/Dataset_Visualizations.ipynb). If you have any questions, please feel free to reach out at any time! :smile: 
