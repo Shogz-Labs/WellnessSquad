@@ -2,7 +2,9 @@
 
 *WellnessSquad* is an updated version of [WellnessOracle](https://github.com/stoyonaga/EECS5327_WellnessOracle), a project developed in GS/EECS 5327, Introduction to Machine Learning & Pattern Recognition by Shogo Toyonaga, Abel Habte, Dongwon Lee, and Jonathan Ramos.
 
-I have added some improvements by:
+**Please note that the models used to run the user interface and evaluation are not included in this repository due to file size limitations. You will need to obtain them by running the training notebooks or reaching out to me. I would be more than happy to share them with you over Google Drive :)**
+
+## Improvements
 
 1. Training our base models on new handcrafted features.
     - clean_text
@@ -31,14 +33,13 @@ To initialize the user interface, please run the following command inside the wo
 ```bash
 streamlit run .\user_interface.py
 ```
-The application should open in your default browser. 
+The application should open in your default browser and appear as follows. 
 ![](images/streamlit.png)
 
 ## Data Analytics
 I have provided some preliminary data analytics and visualizations from our training dataset. You may also see them in our [Data_Visualizations.ipynb](https://github.com/stoyonaga/WellnessSquad/blob/main/Notebooks/Dataset_Visualizations.ipynb). If you have any questions, please feel free to reach out at any time! :smile: 
 
 ## Pipeline 
-
 The new pipeline can be visualized below:
 ![](images/pipeline.png)
 
