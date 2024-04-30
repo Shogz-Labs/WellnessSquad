@@ -31,6 +31,8 @@ To initialize the user interface, please run the following command inside the wo
 ```bash
 streamlit run .\user_interface.py
 ```
+The application should open in your default browser. 
+![](images/streamlit.png)
 
 ## Data Analytics
 I have provided some preliminary data analytics and visualizations from our training dataset. You may also see them in our [Data_Visualizations.ipynb](https://github.com/stoyonaga/WellnessSquad/blob/main/Notebooks/Dataset_Visualizations.ipynb). If you have any questions, please feel free to reach out at any time! :smile: 
