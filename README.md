@@ -25,12 +25,14 @@
     - Optuna Visualizations
 
 4. New Models & New Hyperparameter Tuning Methods
+    - [google-bert/bert-base-uncased](https://huggingface.co/google-bert/bert-base-uncased)
     - VotingClassifier
     - Gradient Boosting Classifier
     - Optuna Studies
 
-5. Deep Learning (LLMS)
+5. Deep Learning
     - Chatbot feature is supported through the use of prompt engineering, quantization, and [facebook/blenderbot-3B](https://huggingface.co/facebook/blenderbot-3B)
+    - Finetuning pretrained classifier ([google-bert/bert-base-uncased](https://huggingface.co/google-bert/bert-base-uncased))
 
 ## User Interface
 To initialize the application(s), please run the following commands inside the working directory:
@@ -64,10 +66,12 @@ As the project progresses, more tables and visualizations will be provided below
 
 | Model  | Model Accuracy | 
 | ------------- | ------------- | 
-| [Random Forest](https://github.com/stoyonaga/WellnessSquad/blob/main/Notebooks/Models/RandomForest.ipynb)  | 89.1% |
+| [Finetuned BERT-Base-Uncased Classifier](https://github.com/stoyonaga/WellnessSquad/blob/main/Notebooks/Models/FinetunedBERTClassifier.ipynb) | 97.0% | 
 | [Logistic Regression](https://github.com/stoyonaga/WellnessSquad/blob/main/Notebooks/Models/LogisticRegression.ipynb) | 94.0% | 
-| [Gradient Boosting Classifier](https://github.com/stoyonaga/WellnessSquad/blob/main/Notebooks/Models/GradientBoosting.ipynb) | 89.3% | 
 | [VotingClassifier](https://github.com/stoyonaga/WellnessSquad/blob/main/Notebooks/Models/VotingClassifier.ipynb) | 93.0 %|
+| [Gradient Boosting Classifier](https://github.com/stoyonaga/WellnessSquad/blob/main/Notebooks/Models/GradientBoosting.ipynb) | 89.3% | 
+| [Random Forest](https://github.com/stoyonaga/WellnessSquad/blob/main/Notebooks/Models/RandomForest.ipynb)  | 89.1% |
+
 
 I would have loved to provide the optimal hyperparameters from running a comprehensive optuna study, however, I do not currently have the available compute.
 Nevertheless, I have provided the programming scripts to obtain them if you have a sufficiently strong CPU and an abundance of computing time :P 
